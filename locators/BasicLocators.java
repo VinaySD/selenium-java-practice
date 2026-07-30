@@ -16,6 +16,7 @@ public class BasicLocators {
         driver.get("https://www.youtube.com/");
 
         // Name Locator
+        driver.findElement(By.name("search_query")).sendKeys("selenium");
 
         // ID Locator
         boolean logoDisplayStatus = driver.findElement(By.id("logo-icon")).isDisplayed();
