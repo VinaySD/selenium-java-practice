@@ -19,30 +19,24 @@ public class OpenTheLinkInNewTab {
         driver.get("https://demo.nopcommerce.com/");
         driver.manage().window().maximize();
 
-        WebElement regLink = driver.findElement(
-                By.xpath("//a[normalize-space()='Register']")
+        WebElement regLink = driver.findElement(By.xpath("//a[normalize-space()='Register']")
         );
 
         Actions act = new Actions(driver);
 
         // Ctrl + Click on Register link
-        act.keyDown(Keys.CONTROL)
-                .click(regLink)
-                .keyUp(Keys.CONTROL)
-                .perform();
+        act.keyDown(Keys.CONTROL).click(regLink).keyUp(Keys.CONTROL).perform();
 
         // Switching to Registration page
         List<String> ids = new ArrayList<>(driver.getWindowHandles());
 
         // Registration Page
         driver.switchTo().window(ids.get(1));
-        driver.findElement(By.xpath("//input[@id='FirstName']"))
-                .sendKeys("John KENEDY");
+        driver.findElement(By.xpath("//input[@id='FirstName']")).sendKeys("John KENEDY");
 
         // Home Page
         driver.switchTo().window(ids.get(0));
-        driver.findElement(By.xpath("//input[@id='small-searchterms']"))
-                .sendKeys("TShirts");
+        driver.findElement(By.xpath("//input[@id='small-searchterms']")).sendKeys("TShirts");
 
         driver.quit();
     }

@@ -1,4 +1,4 @@
-package day36;
+package selenium.windowstabs;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
