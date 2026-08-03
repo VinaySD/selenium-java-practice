@@ -1,0 +1,38 @@
+# File Upload Examples
+
+Before running the code:
+
+1. Create a text file (for example: `Test1.txt`).
+2. Save it anywhere on your computer.
+3. Copy the full file path.
+4. Replace `YOUR_FILE_PATH` with your file path.
+
+Example:
+
+```java
+driver.findElement(By.xpath("//input[@id='filesToUpload']")).sendKeys("YOUR_FILE_PATH");
+```
+
+Example path:
+
+```text
+C:\Automation\automationFiles\Test1.txt
+```
+
+## Multiple File Upload
+
+Create two text files (for example: `Test1.txt` and `Test2.txt`).
+
+Replace the file paths in the code:
+
+```java
+String file1 = "YOUR_FILE1_PATH";
+String file2 = "YOUR_FILE2_PATH";
+```
+
+Example:
+
+```java
+String file1 = "C:\\Automation\\automationFiles\\Test1.txt";
+String file2 = "C:\\Automation\\automationFiles\\Test2.txt";
+```
