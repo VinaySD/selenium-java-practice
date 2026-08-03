@@ -1,0 +1,30 @@
+# Browser Extensions
+
+## Explanation
+
+These examples demonstrate how to use Chrome extensions in Selenium.
+
+### Steps
+
+1. Install **CRX Extractor/Downloader** manually in Chrome.
+2. Install the required Chrome extension (for example, SelectorsHub, uBlock-Origin).
+3. Use **CRX Extractor** to download the extension as a `.crx` file.
+4. Save the `.crx` file on your computer.
+5. Provide the `.crx` file path in your Selenium code.
+
+Example:
+
+```java
+ChromeOptions options = new ChromeOptions();
+options.addExtensions(new File("YOUR_CRX_FILE_PATH"));
+
+ChromeDriver driver = new ChromeDriver(options);
+```
+
+### Example Path
+
+```text
+C:\Automation\Extensions\SelectorsHub.crx
+```
+
+> **Note:** Replace `YOUR_CRX_FILE_PATH` with the actual location of the `.crx` file on your computer before running the example.
