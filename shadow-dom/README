@@ -1,0 +1,74 @@
+# Shadow DOM
+
+## What is Shadow DOM?
+
+Shadow DOM is a way to keep a web components HTML and CSS separate from the rest of the page.
+
+A normal Selenium locator cannot directly access elements inside a Shadow DOM. You must first enter the Shadow Root using `getShadowRoot()`.
+
+---
+
+## Example 1: Single Shadow DOM
+
+```java
+SearchContext shadow = driver.findElement(By.cssSelector("#shadow-root"))
+                             .getShadowRoot();
+
+shadow.findElement(By.cssSelector("#shadow-element"));
+```
+
+Steps:
+1. Locate the Shadow Host.
+2. Get the Shadow Root.
+3. Locate the required element inside it.
+
+---
+
+## Example 2: Nested Shadow DOM
+
+```java
+SearchContext shadow0 = driver.findElement(By.cssSelector("#shadow-root"))
+                              .getShadowRoot();
+
+SearchContext shadow1 = shadow0.findElement(By.cssSelector("#inner-shadow-dom"))
+                               .getShadowRoot();
+
+shadow1.findElement(By.cssSelector("#nested-shadow-element"));
+```
+
+Steps:
+1. Enter the first Shadow Root.
+2. Locate the next Shadow Host inside it.
+3. Enter the second Shadow Root.
+4. Access the required element.
+
+---
+
+## Example 3: Multi-Level Shadow DOM
+
+```java
+SearchContext shadow0 = driver.findElement(By.cssSelector("#shadow-root"))
+                              .getShadowRoot();
+
+SearchContext shadow1 = shadow0.findElement(By.cssSelector("#inner-shadow-dom"))
+                               .getShadowRoot();
+
+SearchContext shadow2 = shadow1.findElement(By.cssSelector("#nested-shadow-dom"))
+                               .getShadowRoot();
+
+shadow2.findElement(By.cssSelector("#multi-nested-shadow-element"));
+```
+
+Steps:
+1. Enter the first Shadow Root.
+2. Enter the second Shadow Root.
+3. Enter the third Shadow Root.
+4. Locate the required element.
+
+---
+
+## Note
+
+- Use `getShadowRoot()` to enter each Shadow DOM.
+- For nested Shadow DOMs, repeat the same process until you reach the target element.
+- Each Shadow Root must be accessed one level at a time.
