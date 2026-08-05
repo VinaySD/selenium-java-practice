@@ -1,0 +1,37 @@
+# Excel Automation Example
+
+This example demonstrates how to perform data-driven testing using Selenium WebDriver and Apache POI.
+
+## Files
+
+- **DataDrivenTestingExample.java** – Reads test data from an Excel file, performs the test, compares the actual and expected results, and writes the test status back to the Excel file.
+- **ExcelUtils.java** – Contains helper methods for reading, writing, and updating Excel files.
+- **salesdata.xlsx** – Sample Excel file used as test data.
+
+## Before Running
+
+1. Download or create the `salesdata.xlsx` file.
+2. Save it on your computer.
+3. Update the Excel file path in the code.
+
+Example:
+
+```java
+String filePath = "YOUR_EXCEL_FILE_PATH";
+```
+
+Example path:
+
+```text
+C:\Automation\TestData\salesdata.xlsx
+```
+
+## What this example does
+
+- Reads test data from Excel.
+- Enters the data into the web application.
+- Compares the actual result with the expected result.
+- Writes **Passed** or **Failed** back to the Excel file.
+- Highlights the result using colors.
+
+> **Note:** Replace `YOUR_EXCEL_FILE_PATH` with the actual location of the Excel file before running the example.
