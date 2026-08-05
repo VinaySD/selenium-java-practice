@@ -1,0 +1,26 @@
+# Working with Microsoft Excel (Apache POI)
+
+These examples demonstrate how to read and write Excel files using Apache POI.
+
+## Topics Covered
+
+- Reading data from Excel
+- Writing data into Excel
+- Writing data into a specific row and cell
+- Writing dynamic data using user input
+
+## Requirements
+
+- Java
+- Apache POI
+- Maven
+
+## Note
+
+Update the Excel file path according to your project before running the examples.
+
+Example:
+
+```java
+System.getProperty("user.dir") + "\\src\\test\\java\\practice\\test.xlsx"
+```
